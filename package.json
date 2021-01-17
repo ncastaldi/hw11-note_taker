@@ -1,0 +1,22 @@
+{
+  "name": "hw11-note_taker",
+  "version": "1.0.0",
+  "description": "HW11 Note Taking App",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncastaldi/hw11-note_taker.git"
+  },
+  "author": "Nathan Castaldi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ncastaldi/hw11-note_taker/issues"
+  },
+  "homepage": "https://github.com/ncastaldi/hw11-note_taker#readme"
+}
