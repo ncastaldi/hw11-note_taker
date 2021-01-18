@@ -69,6 +69,22 @@ app.post("/api/notes", function (req, res) {
         res.send("your note has been saved");
     });
 });
+
+// Delete Route to delete store notes
+app.delete("/api/notes/:id", function (req, res) {
+    const noteID = req.params.id;
+
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
+        if (err) throw err;
+
+        // Parse currently stored notes
+        const currentNoteData = JSON.parse(data);
+
+        const updatedData = currentNoteData.filter((noteID) => note.id !== parseInt(noteID));
+
+
+    })
+});
 // API Routes
 
 // HTML Routes
