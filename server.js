@@ -70,7 +70,7 @@ app.post("/api/notes", function (req, res) {
     });
 });
 
-// Delete Route to delete store notes
+// Delete Route to delete stored notes
 app.delete("/api/notes/:id", function (req, res) {
     // Capture clicked Note ID
     const noteID = req.params.id;
