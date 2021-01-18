@@ -1,5 +1,6 @@
 // Include required dependencies
 const express = require("express");
+const fs = require("fs");
 const app = express();
 const path = require("path");
 
@@ -7,7 +8,8 @@ const path = require("path");
 const PORT = process.env.PORT || 8080;
 
 // API Routes
-
+app.get("/api/notes", function (req, res) {
+});
 // API Routes
 
 // HTML Routes
