@@ -11,13 +11,12 @@ const PORT = process.env.PORT || 8080;
 // API Routes
 
 // HTML Routes
-app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "./public/index.html"));
-});
-
-
 app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "./public/notes.html"));
+});
+
+app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 // HTML Routes
 
