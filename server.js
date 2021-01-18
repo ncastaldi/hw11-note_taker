@@ -19,7 +19,6 @@ app.use(express.static(__dirname + "/public"));
 // Get Route to read and display from JSON db
 app.get("/api/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "/db/db.json"));
-    console.log(res);
 });
 
 // Post Route to save new note to JSON db
@@ -68,8 +67,6 @@ app.post("/api/notes", function (req, res) {
         res.send("your note has been saved");
     });
 });
-
-
 // API Routes
 
 // HTML Routes
