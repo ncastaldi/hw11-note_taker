@@ -62,16 +62,17 @@ app.post("/api/notes", function (req, res) {
 
         fs.writeFile("./db/db.json", savedNotes, (err) => {
             if (err) throw err;
-            console.log("The file has been saved!");
+            console.log("File saved successfully.");
         });
 
         // Send a response to resolve the post request
-        res.send("your note has been saved");
+        res.send("Note added successfully.");
     });
 });
 
 // Delete Route to delete store notes
 app.delete("/api/notes/:id", function (req, res) {
+    // Capture clicked Note ID
     const noteID = req.params.id;
 
     fs.readFile("./db/db.json", "utf8", (err, data) => {
@@ -80,10 +81,19 @@ app.delete("/api/notes/:id", function (req, res) {
         // Parse currently stored notes
         const currentNoteData = JSON.parse(data);
 
-        const updatedData = currentNoteData.filter((noteID) => note.id !== parseInt(noteID));
+        // Delete clicked note
+        currentNoteData.splice(noteID, 1);
 
+        // Stringify data
+        updatedData = JSON.stringify(currentNoteData);
 
-    })
+        // Write data back to stored db.json
+        fs.writeFile("./db/db.json", updatedData, (err) => {
+            if (err) throw err;
+        });
+
+        res.send("Note deleted succesfully.");
+    });
 });
 // API Routes
 
